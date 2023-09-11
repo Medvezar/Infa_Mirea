@@ -6,7 +6,7 @@ int main()
 {   
     string textIn = "";
     while (true) {
-        cout << "task: \n(exit for close)\n";
+        cout << "\ntask: \n(exit for close)\n";
         cin >> textIn;
         
         if (textIn == "exit")
