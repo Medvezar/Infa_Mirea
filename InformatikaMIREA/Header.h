@@ -14,3 +14,4 @@ void task2_1();
 void task2_2();
 void task2_3();
 void task2_4();
+void task2_5();

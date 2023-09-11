@@ -27,6 +27,8 @@ int main()
             task2_3();
         if (textIn == "2-4")
             task2_4();
+        if (textIn == "2-5")
+            task2_5();
     }
     return 0;
 }
