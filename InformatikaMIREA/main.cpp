@@ -29,6 +29,17 @@ int main()
             task2_4();
         if (textIn == "2-5")
             task2_5();
+        if (textIn == "3-1")
+            task3_1();
+        if (textIn == "3-2")
+            task3_2();
+        if (textIn == "3-3")
+            task3_3();
+        if (textIn == "3-4")
+            task3_4();
+        if (textIn == "3-5")
+            task3_5();
+
     }
     return 0;
 }
