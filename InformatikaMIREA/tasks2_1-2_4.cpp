@@ -3,8 +3,9 @@
 
 void task2_1() {
     float h, r, R, l;
-    cout << "input(height => radius (lower => higher) => len):\t";
-    cin >> h >> r >> R >> l;
+    cout << "input(height => radius (lower => higher)):\t";
+    cin >> h >> r >> R;
+    l = sqrt((R- r) * (R - r) + h * h);
     if ((h <= 0 || r <= 0 || R <= 0 || l <= 0))
         cout << "invalid";
     else {
@@ -15,7 +16,7 @@ void task2_1() {
 
 
 void task2_2() {
-    int n1, n2;
+    float n1, n2;
     cout << "input(x => a):\t";
     cin >> n1 >> n2;
     if (n1 != 0) {
@@ -45,12 +46,22 @@ void task2_3() {
 
 
 void task2_4() {
-    int n1;
+    float n1;
     cout << "input:\t";
     cin >> n1;
     cout << endl;
-    for (int x = n1; x < n1 + 10; x++)
-        cout << x << "\t";
+    if (n1 >= 1) {
+        if (int(n1) < n1)
+            for (int x = n1 + 1; x < n1 + 10; x++)
+                cout << x << "\t";
+        else
+            for (int x = n1; x < n1 + 10; x++)
+                cout << x << "\t";
+    }
+    else {
+        for(int x = 1; x < 11; x++)
+            cout << x << "\t";
+    }
     cout << '\n';
 }
 
