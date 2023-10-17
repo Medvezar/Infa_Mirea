@@ -1,7 +1,6 @@
 #include "Header.h"
 
 
-
 void task1_1() {
     float n1, n2;
     cout << "input:\t";

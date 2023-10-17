@@ -23,3 +23,10 @@ void task3_2();
 void task3_3();
 void task3_4();
 void task3_5();
+
+void task4_1();
+int task4_2();
+void task4_3();
+void task4_4();
+void task4_5();
+void task4_6();
