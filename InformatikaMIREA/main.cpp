@@ -4,13 +4,28 @@
 
 int main()
 {   
-    string textIn = "";
+    bool testRep = false;
+    string textIn = "", str1, str2;
     while (true) {
-        cout << "\ntask: \n(exit for close)\n";
-        cin >> textIn;
-        
+        if (!testRep) {
+            cout << "\ntask: \n(exit for close / 'r' for repeat)\n";
+            str1 = textIn;
+            cin >> textIn;
+            if (textIn == "r") {
+                testRep = true;
+            }
+        }
+        else {
+            cout << "stop?\n";
+            cin >> str2;
+            if (str2 == "y") {
+                testRep = false;
+                textIn = "";
+            }
+        }
         if (textIn == "exit")
             return 0;
+        /*
         if (textIn == "1-1")
             task1_1();
         if (textIn == "1-2")
@@ -39,6 +54,7 @@ int main()
             task3_4();
         if (textIn == "3-5")
             task3_5();
+        */
         if (textIn == "4-1")
             task4_1();
         if (textIn == "4-2")

@@ -1,11 +1,18 @@
 #pragma once
 
+#include <algorithm>
 #include <iostream>
 #include "math.h"
 #include <string>
 #include <fstream>
+#include <vector>
+#include <iomanip>
+#include <cmath>
+#include <Windows.h>
+
 
 using namespace std;
+
 
 void task1_1();
 void task1_2();
@@ -29,4 +36,4 @@ int task4_2();
 void task4_3();
 void task4_4();
 void task4_5();
-void task4_6();
+int task4_6();
