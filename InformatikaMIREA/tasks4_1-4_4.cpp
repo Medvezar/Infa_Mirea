@@ -237,3 +237,229 @@ int task4_6() {
 	cout << "num: " << num;
 	return 0;
 }
+
+
+void task4_7() {
+	int m, b, c;
+	int s = 0;
+	cout << "\ninput (m -> b -> c):\t";
+	cin >> m >> b >> c;
+	for (int x = 0; x < 15; x++) {
+		s = (m * s + b) % c;
+		cout << '\n' << s;
+	}
+	cout << "\nend";
+}
+
+
+vector <int> strToVect(string str) {
+	vector <int> res;
+	string test;
+	int num1 = 0, num2 = 0;
+	int num = 0;
+	for (int x = 0; x < str.size() - 1; x++){
+		num = 0;
+		if (str[x] == ' ' && x != str.size() - 1) {
+			num1 = x + 1;
+			num2 = x + 1;
+			while (str[num2] != ' ')
+				num2++;
+			num2 -= 1;
+		}
+		//cout << "\nnum1: " << num1 << '\t' << "num2: " << num2 << '\t' << "x: " << x << '\n';
+		for (int n = num1; n < num2 + 1; n++) {
+			//cout << "cycl2: " << str[n] << '\n';
+			//cout << "cycl2 res: " << (str[n] - 48) * pow(10, num2 - n) << '\n';
+			num += (str[n] - 48) * pow(10, num2 - n);
+		}
+		res.push_back(num);
+		x += num2 - num1 + 1;
+	}
+	return res;
+}
+
+
+
+void maxSeller(vector <vector <double>> C) {
+	double max = 0.0, min = 10000.0;
+	int max1, min1;
+	for (int x = 0; x < 3; x++) {
+		if (C[x][0] > max) {
+			max1 = x + 1;
+			max = C[x][0];
+		}
+		else if (C[x][0] < min) {
+			min1 = x + 1;
+			min = C[x][0];
+		}
+	}
+	cout << "\nmax seller: " << max1 << "\nmin seller: " << min1;
+}
+
+
+void maxKom(vector <vector<double>> C) {
+	double max = 0.0, min = 10000.0;
+	int max1, min1;
+	for (int x = 0; x < 3; x++) {
+		if (C[x][1] > max) {
+			max1 = x + 1;
+			max = C[x][1];
+		}
+		else if (C[x][1] < min) {
+			min1 = x + 1;
+			min = C[x][1];
+		}
+	}
+	cout << "\nmax Kom seller: " << max1 << "\nmin Kom seller: " << min1;
+}
+
+
+void sumM(vector <vector<double>> C) {
+	double s = 0;
+	for (int x = 0; x < 3; x++) {
+		s += C[x][0];
+	}
+	cout << "\nsumM: " << s;
+}
+
+
+void sumK(vector <vector<double>> C) {
+	double s = 0;
+	for (int x = 0; x < 3; x++) {
+		s += C[x][1];
+	}
+	cout << "\nsumK: " << s;
+}
+
+
+void allM(vector <vector<double>> C) {
+	double s = 0;
+	for (int x = 0; x < 3; x++) {
+		s += C[x][0];
+	}
+	for (int x = 0; x < 3; x++) {
+		s += C[x][1];
+	}
+	cout << "\nsum All: " << s;
+}
+
+
+
+void task4_8() {
+	vector <vector <int>> A;
+	vector <vector <double>> B, C;
+	vector <double> test;
+ 	string input1, input;
+	double n;
+	cout << "A\n	1	2	3	4\n";
+	for (int x = 1; x < 4; x++){
+		cout << x << ": ";
+		cin >> input1;
+		getline(cin, input);
+		input = " " + input1 + input + " ";
+		A.push_back(strToVect(input));
+	}
+	cout << "\nB\n1	2\n";
+	for (int x = 1; x < 5; x++) {
+		cout << x << ": ";
+		cin >> n;
+		test.push_back(n);
+		cin >> n;
+		test.push_back(n);
+		B.push_back(test);
+		test.clear();
+		cout << '\n';
+	}
+	/*
+	for (auto x : A) {
+		cout << "\n------------\n";
+		for (auto y : x)
+			cout << y << ' ';
+	}
+	cout << "\nB:\n";
+	for (auto x : B) {
+		cout << "\n-----------\n";
+		for (auto y : x)
+			cout << y << " ";
+	}
+	*/
+	for (int x = 0; x < A.size(); x++) {
+		n = 0;
+		test.clear();
+		for (int y = 0; y < A[x].size(); y++) {
+			n += A[x][y] * B[y][0];
+		}
+		test.push_back(n);
+		n = 0;
+		for (int y = 0; y < A[x].size(); y++) {
+			n += A[x][y] * B[y][1];
+		}
+		test.push_back(n);
+		C.push_back(test);
+		test.clear();
+	}
+	cout << "\nC:\n";
+	for (auto x : C) {
+		cout << '\n';
+		for (auto y : x)
+			cout << y << ' ';
+	}
+	cout << "\n-------------\n";
+	maxSeller(C);
+	maxKom(C);
+	sumM(C);
+	sumK(C);
+	allM(C);
+}
+
+
+string reverse(string str1) {
+	string res = "";
+	for (int x = str1.size() - 1; x >= 0 ; x--)
+		res += str1[x];
+	return res;
+}
+
+
+int task4_9() {
+	vector <char> al = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+	vector <int> nums = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+	vector <char> num2;
+	vector <int> num;
+	string num1, res = "";
+	int base1, base2, index, test = 0;
+	cout << "input (num -> base(max 16) -> res base(max 16)): ";
+	cin >> num1 >> base1 >> base2;
+	num1 = to_upper(num1);
+	for (int x = 0; x < num1.size(); x++)
+		if (find(al.begin(), al.end(), num1[x]) == al.end()) {
+			cout << "\ninvalid\n";
+			return -1;
+		}
+	for (int x = 0; x < num1.size(); x++) {
+		auto n1 = find(al.begin(), al.end(), num1[x]);
+		index = n1 - begin(al);
+		num.push_back(nums[index]);
+	}
+	/*
+	cout << "\n----------------------\n";
+	for (auto x : num)
+		cout << x << ' ';
+	cout << "\n----------------------\n";
+	*/
+	for (int x = 0; x < num.size(); x++) {
+		test += num[x] * pow(base1, num.size() - x - 1);
+	}
+	//cout << "\ntest(test): " << test << '\n'; // test
+	while (test != 0) {
+		//cout << "\ntest % base: " << test % base2 << '\n';
+		auto n1 = find(nums.begin(), nums.end(), test % base2);
+		index = n1 - begin(nums);
+		//cout << "index = " << index;
+		res += al[index];
+		//cout << "\nres += " << al[index];
+		test /= base2;
+	}
+	res = reverse(res);
+	cout << "\nres: " << res;
+} 

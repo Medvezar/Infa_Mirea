@@ -98,7 +98,7 @@ void task3_5() {
 	cout << "\n";
 	if (textIn.size() < 30 || textIn.size() > 30) {
 		cout << "invalid(len: " << textIn.size() << " != 30)";
-
+		/*
 		bool test = true;
 		char trash;
 		while (test) {
@@ -113,7 +113,7 @@ void task3_5() {
 			}
 		}
 		cout << textIn;
-
+		*/
 	}
 	else {
 		bool test = true;

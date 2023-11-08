@@ -52,9 +52,10 @@ int main()
             task3_3();
         if (textIn == "3-4")
             task3_4();
+        */
         if (textIn == "3-5")
             task3_5();
-        */
+        
         if (textIn == "4-1")
             task4_1();
         if (textIn == "4-2")
@@ -67,7 +68,20 @@ int main()
             task4_5();
         if (textIn == "4-6")
             task4_6();
-
+        if (textIn == "4-7")
+            task4_7();
+        if (textIn == "4-8")
+            task4_8();
+        if (textIn == "4-9")
+            task4_9();
+        if (textIn == "5-1")
+            task5_1();
+        if (textIn == "5-2")
+            task5_2();
+        if (textIn == "5-3")
+            task5_3();
+        if (textIn == "5-4")
+            task5_4();
     }
     return 0;
 }

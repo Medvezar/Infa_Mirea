@@ -37,3 +37,12 @@ void task4_3();
 void task4_4();
 void task4_5();
 int task4_6();
+void task4_7();
+void task4_8();
+int task4_9();
+
+
+int task5_1();
+int task5_2();
+int task5_3();
+int task5_4();
